@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2024-09-03 15:19:33.334063",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-09-03 16:15:06.904462",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "today-activity",
+ "owner": "Administrator",
+ "page_name": "today-activity",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Today Activities"
+}

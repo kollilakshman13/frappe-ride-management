@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2024-09-03 17:01:50.324574",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-09-03 17:02:16.376362",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "targets",
+ "owner": "Administrator",
+ "page_name": "targets",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Target Display"
+}

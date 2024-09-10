@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="shortcut icon" href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
+	<link rel="icon" href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="homepage1.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300;500&family=Playfair+Display+SC&family=Roboto:wght@300&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,500..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,600,0,0" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+    
+    
+</head>
+<body>
+    <!--<header>
+        <h6 style="height:15px;">
+            <marquee style="animation-duration: 20s;"> 
+                {% set task = frappe.get_all("Event", filters={'status': 'Open'}, fields=['subject','starts_on','ends_on','event_type','description']) %}
+                {% for tasks in task[0:]%}
+                *{{ tasks.subject }}&nbsp;&nbsp;
+                {% set current_datetime = tasks.starts_on %}
+                {% set date_component = current_datetime.date() if current_datetime %}
+                {% set formatted_date = date_component.strftime("%d-%m-%Y") if date_component %}
+                {% set time_component = current_datetime.time() if current_datetime %}
+                Date:{{ formatted_date }} &nbsp;&nbsp;Starts:{{time_component}} 
+                {% set current_datetime1 = tasks.ends_on %}
+                {% set time_component1 = current_datetime1.time() if current_datetime1 %}
+               &nbsp;&nbsp; Ends:{{ time_component1 }}&nbsp;&nbsp;//
+                {%endfor%}
+            </marquee>
+        </h6>
+    </header>-->
+    <header class="header-area overlay">
+        <nav class="navbar navbar-expand-md bg-light ">
+            <div class="container">
+                <a href="home" class="navbar-brand"><img src="/files/64 Network Security_outline (3).jpg"></a>
+                
+                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+                
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a href="/home" class="nav-item nav-link ">Home</a></li>
+                        <li><a href="#" class="nav-item nav-link">About Us</a></li>
+                        <li><a href="/Solutions" class="nav-item nav-link">Solutions</a></li>
+                        <li> <a href="/contact1.html" class="nav-item nav-link" >Contact</a></li>
+                        <li> <a href="/carrer" class="nav-item nav-link" >Carrer</a></li>
+                        <li> <a href="/blogs" class="nav-item nav-link" >Blogs</a></li>
+                        <li> <a href="/events" class="nav-item nav-link" >Events</a></li>
+                        <li><a href='/login' class="nav-item nav-link" style="color:green;">Log in</a></li>
+                    </ul>
+                </div>
+                <img src="http://192.168.23.24:8000/files/16years%20experience.png">
+            </div>
+        </nav>
+        
+        
+    </header>
+
+    
+    
+
+    
+    <section class="section home-5-bg box1 container mt-3" id="home">
+        <div id="particles-js"></div>
+        <div class="bg-overlay"></div>
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="justify-content-center row">
+                        <div class="col-lg-7">
+                            <div class="mt-5 text-center home-5-content">
+                                <div class="home-icon mb-4"><i class="mdi mdi-pinwheel mdi-spin text-white h5">Who we are ?</i></div>
+                                <h1 class="text-white font-weight-normal home-5-title mb-0">WE ARE THE <span style="color:blue;">EMERGING PIONEERS</span> OF NETWORK SECURITY</h1>
+                                <p class="text-white-70 mt-4 f-15 mb-0">With over 13 years of experience delivering high performance security across the IT infrastructure of small and medium businesses, enterprises and government agencies in India, our network security and hybrid cloud solutions secure thousands of networks and their emails, applications and data across India.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h6 style="text-align: center;margin-top: 10px;">Notifications</h6>
+    <div class="box2">
+        <div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
+            {% set tasks = frappe.get_all("Event", filters={'status': 'open'}, fields=['subject','starts_on','ends_on','event_type','description'], order_by='starts_on asc') %} 
+            {% set dates = frappe.utils.now() %}
+            {% set ddates = frappe.utils.format_datetime(dates, 'dd-MM-YYYY') %}
+            {% set dtime = frappe.utils.format_datetime(dates, 'HH:mm:ss') %}     
+            
+            <div class="carousel-inner text-center w-100">
+                <div class="carousel-item active">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            {% set current_datetime = tasks[0].starts_on %}
+                            {% set date_component = current_datetime.date() if current_datetime %}
+                            {% set formatted_date = date_component.strftime("%d-%m-%Y") if date_component %}
+                            {% set time_component = current_datetime.time() if current_datetime %}
+                            {% if formatted_date > ddates %}
+                                <div class="box6">
+                                    <p>{{tasks[0].subject}}&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Date: {{ formatted_date }}&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Starts on: {{ time_component }}&nbsp;&nbsp;&nbsp;</p>
+                                    {% set current_datetime1 = tasks[0].ends_on %}
+                                    {% set time_component1 = current_datetime1.time() if current_datetime1 %}
+                                    <p>Ends on: {{ time_component1 }}&nbsp;&nbsp;&nbsp;</p>
+                                    <a href="#">click on</a> 
+                                </div>
+                            {% else %}
+                                {% if time_component == dtime %}
+                                    <div class="box6">
+                                        <p>{{tasks[0].subject}}&nbsp;&nbsp;&nbsp;</p>
+                                        <p>Date: {{ formatted_date }}&nbsp;&nbsp;&nbsp;</p>
+                                        <p>Starts on: {{ time_component }}&nbsp;&nbsp;&nbsp;</p>
+                                        {% set current_datetime1 = tasks[0].ends_on %}
+                                        {% set time_component1 = current_datetime1.time() if current_datetime1 %}
+                                        <p>Ends on: {{ time_component1 }}&nbsp;&nbsp;&nbsp;</p>
+                                        <a href="#">click on</a> 
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% for task in tasks[1:] %}
+                    <div class="carousel-item">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                {% set current_datetime = task.starts_on %}
+                                {% set date_component = current_datetime.date() if current_datetime %}
+                                {% set formatted_date = date_component.strftime("%d-%m-%Y") if date_component %}
+                                {% set time_component = current_datetime.time() if current_datetime %}
+                                {% if formatted_date > ddates %}
+                                    <div class="box6">
+                                        <p>{{task.subject}}&nbsp;&nbsp;&nbsp;</p>
+                                        <p>Date: {{ formatted_date }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p>Starts on: {{ time_component }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        {% set current_datetime1 = task.ends_on %}
+                                        {% set time_component1 = current_datetime1.time() if current_datetime1 %}
+                                        <p>Ends on: {{ time_component1 }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <a href="#">click on</a> 
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                {% set jobs = frappe.get_all("Job Opening", filters={'status':'open'}, fields=['job_title','company','designation','department']) %}
+                <div class="carousel-item">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="box6">
+                                <p>{{jobs[0].job_title}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p>Designation: {{jobs[0].designation}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p>Department: {{jobs[0].department}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <a href="career.html">learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for job in jobs[1:] %}
+                    <div class="carousel-item">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                <div class="box6">
+                                    <p>{{job.job_title}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Designation: {{job.designation}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Department: {{job.department}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    <a href="career.html">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="box3">
+        
+        <div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
+         {%  set details=frappe.get_all("Solution",filters={'status': 'Enable','is_published': 1},fields=['name1','font_symbols','route','status'],order_by='name asc') %}       
+            
+            <div class="carousel-inner text-center w-100">
+                
+                <div class="carousel-item active">
+                    <div class=" col-xs-12 col-md-3 col-lg-3">
+                        <div class="card card-body service-wrapper">
+                            <span class="material-symbols-outlined text-center" style="font-size: 25px;color:orange">
+                                {{details[0].font_symbols}}
+                            </span>
+                            <p class="card-title mt-2" style="color: orange;">{{details[0].name1}}</p>
+                            <p class="mt-1"><a href="/{{details[0].route}}">learn more</a></a> </p>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                {%for sol in details[1:] %}
+                <div class="carousel-item">    
+                    <div class="col-xs-12 col-md-3 col-lg-3">
+                        <div class="card card-body service-wrapper ">
+                            <span class="material-symbols-outlined text-center" style="font-size: 25px;margin-top:5px;color:orange">
+                                {{sol.font_symbols}}
+                            </span>
+                            <p class="card-title mt-2" style="color:orange">{{sol.name1}}</p>
+                            <p class="mt-1"><a href="/{{sol.route}}">learn more</a> </p>
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+                {%endfor%}
+                
+            </div>
+        </div>
+    </div>  
+
+
+   
+
+    <div class="container">
+        <div class="box4">
+            <br><br>
+            <h2 style="text-align: center;font-weight: 600;">We develops strategic software solutions for businesses.</h2><br><br>
+            <div class="row">
+                <div class="col" style="text-align: right; margin-right:0px;">
+                    <h1 style="color: aqua;" style="font-size:30px";>2,5k+</h1>
+                    <p>Of customers<br>worldwide</p>
+                </div>
+                <div class="col" style="margin-left: 40px;">
+                    
+                    {% set val = frappe.get_all('Company', ['date_of_incorporation', 'company_description']) %}
+                    {% set date_variable = val[0].date_of_incorporation if val and val[0].date_of_incorporation else None %}
+                    {% set formatted_year = date_variable.strftime("%Y") if date_variable else None %}
+                    <h1 style="color: aqua;"> {{ formatted_year }} </h1>
+                    <p>Year of<br>establishment</p>
+                </div>
+            </div>
+            <div class="box9">
+                <div class="row">
+                    <br><br><br>
+                </div>
+            </div>
+            <p style="text-align: center;font-size:14px;font-weight: 500;">You have better things to do than worry about IT for your small business. Let’s Discuss about Project.</p>
+
+        </div>
+    </div>
+    
+    
+    <div  class="box5 ">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15226.077886686488!2d78.4388266!3d17.4348336!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90dae9db9cb9%3A0xe1711766ff5ea84e!2s64%20Network%20Security%20Private%20Limited!5e0!3m2!1sen!2sin!4v1702385687058!5m2!1sen!2sin"
+            style="border:0; width: 98vw; height: 400px;"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+    
+    <footer class=" footer" style="background-color: #092B4C;">
+        <div class="footer-top py-3">
+            <h5 class="text-white" style="text-align:center;">64 Network Security Private Limited</h5> 
+            
+            <div class="container">    
+                <div class="row gy-5 py-2">
+                    <div class="col-lg-3 pe-xxl-10 col-md-3 col-xs-12">    
+                        <h5 class="text-white footer-title-01">Quick links</h5>
+                        <ul class="list-unstyled footer-link-01 m-0">
+                            <li><a class="text-white text-opacity-75" href="#" style="text-decoration:none;">
+                                <span class="material-symbols-outlined">
+                                    done
+                                </span>&nbsp;about us</a>
+                            </li>
+                            <li><a class="text-white text-opacity-75" href="/contactform" style="text-decoration:none;">
+                                <span class="material-symbols-outlined">
+                                    call
+                                </span>&nbsp; Contact us</a>
+                            </li>
+                            <li><a class="text-white text-opacity-75" href="/all-products" style="text-decoration:none;">
+                                <span class="material-symbols-outlined">
+                                    radio_button_checked
+                                </span>&nbsp; Products</a>
+                            </li>   
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <h5 class="text-white footer-title-01">Need Help?</h5>
+                        <ul class="list-unstyled footer-link-01 m-0">
+                            <li><a class="text-white text-opacity-75" href="#" style="text-decoration:none;">Contact Us: +91 79956 46464</a></li>
+                            <li><a class="text-white text-opacity-75" href="#" style="text-decoration:none;">Address:&nbsp;5th Floor, 8-3-318/11/3, Kolluri House Plot No 3, 
+                                Jaya Prakash Nagar, Yella Reddy Guda, Hyderabad, Telangana 500073</a>
+                            </li>
+                            
+                        </ul>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook" style="color:white;font-size:18px"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter" style="color:white;font-size:18px"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram" style="color:white;font-size:18px"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus" style="color:white;font-size:18px"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-linkedin-in" style="color:white;font-size:18px"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope" style="color:white;font-size:18px"></i></a></li>
+                        </ul>
+                    </div>
+                    
+                </div>	
+            </div>
+        </div>
+        
+        <div class="footer-bottom small py-3">
+            <p style="text-align:center;color:white;">© 2023 64 Network Security Private Limited.. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+    
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js'></script>
+    <script link="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="homepage1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+    
+    
+</body>
+</html>
+
+
+
+
+

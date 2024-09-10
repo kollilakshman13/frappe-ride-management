@@ -1,0 +1,17 @@
+{
+ "__islocal": true,
+ "__unsaved": 1,
+ "creation": "2024-06-11 17:29:26.024110",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [],
+ "idx": 0,
+ "modified": "2024-06-11 17:29:26.024110",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "New navbar template",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Navbar"
+}

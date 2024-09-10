@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "call.####",
+ "creation": "2024-09-03 17:24:30.114190",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "remainder",
+  "remainder_notification_sent"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "remainder",
+   "fieldtype": "Datetime",
+   "label": "Remainder"
+  },
+  {
+   "default": "0",
+   "fieldname": "remainder_notification_sent",
+   "fieldtype": "Check",
+   "label": "Remainder Notification Sent",
+   "print_hide": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-04 13:48:08.048239",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "Call List",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

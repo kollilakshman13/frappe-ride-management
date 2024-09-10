@@ -1,0 +1,67 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "car_name",
+   "fieldtype": "Data",
+   "label": "cars",
+   "width": 200
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model",
+   "width": 0
+  },
+  {
+   "fieldname": "number_plate",
+   "fieldtype": "Data",
+   "label": "number plate",
+   "width": 0
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "width": 0
+  },
+  {
+   "fieldname": "count",
+   "fieldtype": "Int",
+   "label": "No Of Cars",
+   "width": 0
+  }
+ ],
+ "creation": "2024-03-11 18:31:56.914527",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "mandatory": 0,
+   "options": "Active\nDisable",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2024-03-14 10:38:39.798101",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "vehicle by new",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT car_name,model,number_plate,route, COUNT(*) AS Count\r\nFROM tabVehicles \r\nWHERE status= %(status)s \r\nGROUP BY car_name;\r\n\r\n",
+ "ref_doctype": "Vehicles",
+ "report_name": "vehicle by new",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

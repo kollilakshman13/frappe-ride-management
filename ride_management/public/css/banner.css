@@ -1,0 +1,5 @@
+/* Example: Change width and height of the banner */
+.banner {
+    width: 100%; /* Set the desired width */
+    max-height: 150px; /* Set the desired height */
+}

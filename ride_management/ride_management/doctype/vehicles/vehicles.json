@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2023-12-11 16:00:18.505727",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "car_name",
+  "model",
+  "number_plate",
+  "rc",
+  "is_published",
+  "route",
+  "section_break_7",
+  "filters_table",
+  "custom_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "car_name",
+   "fieldtype": "Data",
+   "label": "Car Name"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Model"
+  },
+  {
+   "fieldname": "number_plate",
+   "fieldtype": "Data",
+   "label": "Number Plate"
+  },
+  {
+   "fieldname": "rc",
+   "fieldtype": "Data",
+   "label": "Rc"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "filters_table",
+   "fieldtype": "Table",
+   "label": "Filters Table ",
+   "options": "Ride Order Filter"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "custom_image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "custom_image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
+ "links": [],
+ "modified": "2024-08-02 18:27:09.572975",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "Vehicles",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "vehicles",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

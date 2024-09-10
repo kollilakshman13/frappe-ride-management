@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-29 11:14:20.952737",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doctypes",
+  "field_name",
+  "condition",
+  "value",
+  "and_or_condition",
+  "field_name_options"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctypes",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Doctypes",
+   "options": "\nCustomer\nSales Order\nQuotation\nSales Invoice\nPurchase Order"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Condition",
+   "options": "\nIn\nNot In"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Value"
+  },
+  {
+   "fieldname": "and_or_condition",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "And OR Condition",
+   "options": "\nand\nor"
+  },
+  {
+   "fieldname": "field_name_options",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "Field Name Options"
+  },
+  {
+   "fieldname": "field_name",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "field name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-06 17:46:54.209392",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "Filters Table1",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

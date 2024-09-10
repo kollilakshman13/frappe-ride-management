@@ -1,0 +1,685 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{partner_name}",
+ "creation": "2024-08-13 16:56:40.111453",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "active_renewal_details_section",
+  "active_renewals",
+  "new_opp_renewal_details_section",
+  "new_renewals",
+  "managed_services_details_section",
+  "managed_services",
+  "basic_info",
+  "series",
+  "salutation",
+  "partner_name",
+  "partner_type",
+  "gst_category",
+  "export_type",
+  "partner_group",
+  "column_break_5",
+  "territory",
+  "gender",
+  "from_lead",
+  "from_opportunity",
+  "account_manager",
+  "image",
+  "phone_number",
+  "email_details_section",
+  "mx_record",
+  "column_break_26",
+  "email_service_provider",
+  "defaults_section",
+  "default_price_list",
+  "default_company_bank_account",
+  "column_break_31",
+  "billing_currency",
+  "internal_partner_section",
+  "is_internal_partner",
+  "member_of",
+  "employees",
+  "represents_company",
+  "column_break_38",
+  "allowed_to_transact_with",
+  "more_information_section",
+  "market_segment",
+  "industry",
+  "customer_pos_id",
+  "section_break_43",
+  "website",
+  "print_language",
+  "column_break_14",
+  "partner_details",
+  "address_and_contact_section",
+  "address_html",
+  "column_break_50",
+  "contact_html",
+  "primary_address_and_contact_section",
+  "partner_primary_contact",
+  "mobile_no",
+  "email_id",
+  "column_break_25",
+  "partner_primary_address",
+  "primary_address",
+  "section_break_60",
+  "tax_id",
+  "gstin",
+  "pan",
+  "column_break_64",
+  "tax_category",
+  "tax_withholding_category",
+  "credit_limit_and_payment_terms_section",
+  "default_payment_terms_template",
+  "credit_limit",
+  "default_receivable_accounts_section",
+  "receivable_accounts",
+  "loyalty_points_section",
+  "loyalty_program",
+  "column_break_74",
+  "loyalty_program_tier",
+  "sales_team_details_section",
+  "sales_team",
+  "section_break_78",
+  "sales_partner",
+  "created_by",
+  "column_break_81",
+  "commission_rate",
+  "reports_to",
+  "section_break_84",
+  "so_required",
+  "dn_required",
+  "column_break_87",
+  "is_frozen",
+  "disabled",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info",
+   "fieldtype": "Section Break",
+   "options": "fa fa-user"
+  },
+  {
+   "bold": 1,
+   "fieldname": "partner_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Partner name",
+   "no_copy": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Company",
+   "fieldname": "partner_type",
+   "fieldtype": "Select",
+   "label": "Partner Type",
+   "options": "Company\nIndividual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "partner_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Partner Group",
+   "options": "Partner Group"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "account_manager",
+   "fieldtype": "Link",
+   "label": "Account Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image",
+   "print_hide": 1
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "partner_details",
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information",
+   "options": "fa fa-file-text"
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "label": "Industry",
+   "options": "Industry Type"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "print_language",
+   "fieldtype": "Link",
+   "label": "Print Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Additional information regarding the partner.",
+   "fieldname": "partner_details",
+   "fieldtype": "Text",
+   "label": "Partner Details"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact",
+   "options": "fa fa-map-marker"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "contact_html",
+   "fieldtype": "HTML",
+   "label": "Contact HTML",
+   "read_only": 1
+  },
+  {
+   "description": "Select, to make the customer searchable with these fields",
+   "fieldname": "primary_address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Address and Contact"
+  },
+  {
+   "description": "Reselect, if the chosen contact is edited after save",
+   "fetch_from": "contact_html.name",
+   "fieldname": "partner_primary_contact",
+   "fieldtype": "Link",
+   "label": "partner Primary Contact",
+   "options": "Contact"
+  },
+  {
+   "depends_on": "partner_primary_contact",
+   "fetch_from": "partner_primary_contact.mobile_no",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "read_only": 1
+  },
+  {
+   "depends_on": "partner_primary_contact",
+   "fetch_from": "partner_primary_contact.email_id",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Reselect, if the chosen address is edited after save",
+   "fetch_from": "address_html.name",
+   "fieldname": "partner_primary_address",
+   "fieldtype": "Link",
+   "label": "Partner Primary Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "Text",
+   "label": "Primary Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_team_details_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Team Details"
+  },
+  {
+   "fieldname": "sales_team",
+   "fieldtype": "Table",
+   "label": "Sales Team",
+   "options": "Sales Team"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "active_renewal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Active Renewal Details"
+  },
+  {
+   "fieldname": "active_renewals",
+   "fieldtype": "Table",
+   "label": "Active Renewals",
+   "options": "Active Renewals"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "new_opp_renewal_details_section",
+   "fieldtype": "Section Break",
+   "label": "New Opp Renewal Details"
+  },
+  {
+   "fieldname": "new_renewals",
+   "fieldtype": "Table",
+   "label": "New Renewals",
+   "options": "New Renewals"
+  },
+  {
+   "fieldname": "managed_services_details_section",
+   "fieldtype": "Section Break",
+   "label": "Managed Services Details"
+  },
+  {
+   "fieldname": "managed_services",
+   "fieldtype": "Table",
+   "label": "Managed Services",
+   "options": "Managed Services"
+  },
+  {
+   "fieldname": "series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PARTNER-.YYYY.-"
+  },
+  {
+   "depends_on": "eval:doc.partner_type!='Company'",
+   "fieldname": "salutation",
+   "fieldtype": "Link",
+   "label": "Salutation",
+   "options": "Salutation"
+  },
+  {
+   "fieldname": "gst_category",
+   "fieldtype": "Select",
+   "label": "GST Category",
+   "options": "Registered Regular\nRegistered Composition\nUnregistered\nSEZ\nOverseas\nConsumer\nDeemed Export\nUIN Holders",
+   "translatable": 1
+  },
+  {
+   "depends_on": "eval:in_list([\"SEZ\", \"Overseas\", \"Deemed Export\"], doc.gst_category)",
+   "fieldname": "export_type",
+   "fieldtype": "Select",
+   "label": "Export Type",
+   "mandatory_depends_on": "eval:in_list([\"SEZ\", \"Overseas\", \"Deemed Export\"], doc.gst_category)",
+   "options": "\nWith Payment of Tax\nWithout Payment of Tax"
+  },
+  {
+   "depends_on": "eval:doc.partner_type != 'Company'",
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "from_lead",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "From Lead",
+   "no_copy": 1,
+   "options": "Lead",
+   "report_hide": 1
+  },
+  {
+   "fieldname": "from_opportunity",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "From Opportunity",
+   "no_copy": 1,
+   "options": "Opportunity",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Phone Number",
+   "translatable": 1
+  },
+  {
+   "fieldname": "email_details_section",
+   "fieldtype": "Section Break",
+   "label": "Email Details"
+  },
+  {
+   "fieldname": "mx_record",
+   "fieldtype": "Data",
+   "label": "MX Record",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email_service_provider",
+   "fieldtype": "Data",
+   "label": "Email Service Provider",
+   "translatable": 1
+  },
+  {
+   "fieldname": "defaults_section",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_price_list",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Default Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "default_company_bank_account",
+   "fieldtype": "Link",
+   "label": "Default Company Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billing_currency",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Billing Currency",
+   "no_copy": 1,
+   "options": "Currency"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "is_internal_partner",
+   "fieldname": "internal_partner_section",
+   "fieldtype": "Section Break",
+   "label": "Internal Partner"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_internal_partner",
+   "fieldtype": "Check",
+   "label": "Is Internal Partner"
+  },
+  {
+   "fieldname": "member_of",
+   "fieldtype": "Link",
+   "label": "Member Of",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Employees",
+   "reqd": 1
+  },
+  {
+   "depends_on": "is_internal_partner",
+   "fieldname": "represents_company",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Represents Company",
+   "options": "Company",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "represents_company",
+   "fieldname": "allowed_to_transact_with",
+   "fieldtype": "Table",
+   "label": "Allowed To Transact With",
+   "options": "Allowed To Transact With"
+  },
+  {
+   "fieldname": "market_segment",
+   "fieldtype": "Link",
+   "label": "Market Segment",
+   "options": "Market Segment"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "partner_details",
+   "fieldname": "section_break_43",
+   "fieldtype": "Section Break",
+   "options": "fa fa-file-text"
+  },
+  {
+   "fieldname": "customer_pos_id",
+   "fieldtype": "Data",
+   "label": "Customer POS id",
+   "no_copy": 1,
+   "read_only": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "section_break_60",
+   "fieldtype": "Section Break",
+   "label": "Tax Details"
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID"
+  },
+  {
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "Gstin",
+   "translatable": 1
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "Pan"
+  },
+  {
+   "fieldname": "column_break_64",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_category",
+   "fieldtype": "Link",
+   "label": "Tax Category",
+   "options": "Tax Category"
+  },
+  {
+   "fieldname": "tax_withholding_category",
+   "fieldtype": "Link",
+   "label": "Tax Withholding Category",
+   "options": "Tax Withholding Category"
+  },
+  {
+   "fieldname": "credit_limit_and_payment_terms_section",
+   "fieldtype": "Section Break",
+   "label": "Credit Limit and Payment Terms"
+  },
+  {
+   "fieldname": "default_payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Default Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Table",
+   "label": "Credit Limit",
+   "options": "Customer Credit Limit"
+  },
+  {
+   "fieldname": "default_receivable_accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Default Receivable Accounts"
+  },
+  {
+   "description": "Mention if a non-standard receivable account",
+   "fieldname": "receivable_accounts",
+   "fieldtype": "Table",
+   "label": "Receivable Accounts",
+   "options": "Party Account"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "loyalty_points_section",
+   "fieldtype": "Section Break",
+   "label": "Loyalty Points"
+  },
+  {
+   "fieldname": "loyalty_program",
+   "fieldtype": "Link",
+   "label": "Loyalty Program",
+   "no_copy": 1,
+   "options": "Loyalty Program"
+  },
+  {
+   "fieldname": "column_break_74",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loyalty_program_tier",
+   "fieldtype": "Data",
+   "label": "Loyalty Program Tier",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_78",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_partner",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Sales Partner",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "label": "Created By",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_81",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commission_rate",
+   "fieldtype": "Float",
+   "label": "Commission Rate"
+  },
+  {
+   "fieldname": "reports_to",
+   "fieldtype": "Data",
+   "label": "Reports To",
+   "translatable": 1
+  },
+  {
+   "fieldname": "section_break_84",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "so_required",
+   "fieldtype": "Check",
+   "label": "Allow Sales Invoice Creation Without Sales Order"
+  },
+  {
+   "default": "0",
+   "fieldname": "dn_required",
+   "fieldtype": "Check",
+   "label": "Allow Sales Invoice Creation Without Delivery Note"
+  },
+  {
+   "fieldname": "column_break_87",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_frozen",
+   "fieldtype": "Check",
+   "label": "Is Frozen"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClosed\nRenamed",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_50",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Allowed Group",
+   "link_doctype": "Party Specific Item",
+   "link_fieldname": "party"
+  }
+ ],
+ "modified": "2024-08-21 10:00:51.707026",
+ "modified_by": "Administrator",
+ "module": "Custom Module",
+ "name": "Partners",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "partner_name"
+}
