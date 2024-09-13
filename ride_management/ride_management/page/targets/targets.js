@@ -620,6 +620,37 @@ frappe.pages['targets'].on_page_load = function(wrapper) {
             default: return '#000000';
         }
     }
+    // Function to render the report for the selected Sales Person on the same page
+    function render_report_model(sales_person) {
+        // Remove previous report container if it exists
+        $(page.body).find('.report-container').remove();
+
+        // Create a new container for the report
+        var report_container = $('<div class="report-container" style="margin-top: 30px;"></div>');
+        $(page.body).append(report_container);
+
+        // Create iframe element for the report
+        var report_iframe = $(`<iframe id="report-iframe" 
+        src="/app/query-report/Customer%20Order%20Form%20Report?sales_person=${encodeURIComponent(sales_person)}&minimal=1"
+        style="width: 100%; height: 800px; border: none;"></iframe>`);
+
+        // Append the iframe to the report container
+        report_container.append(report_iframe);
+
+        // Wait for iframe to load to inject custom CSS to hide the navbar
+        report_iframe.on('load', function() {
+            var iframeContent = document.getElementById('report-iframe').contentWindow.document;
+
+            // Inject CSS to hide the navbar inside the iframe
+            var style = document.createElement('style');
+            style.innerHTML = `
+                .navbar { display: none !important; }
+                .page-head { display: none !important; }
+            `;
+            
+            iframeContent.head.appendChild(style);
+        });
+    }
 };*/
 
 
