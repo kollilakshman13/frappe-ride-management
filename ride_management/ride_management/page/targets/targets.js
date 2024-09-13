@@ -293,7 +293,7 @@
 
 
 
-frappe.pages['targets'].on_page_load = function(wrapper) {
+/*frappe.pages['targets'].on_page_load = function(wrapper) {
 
     // Add Bootstrap for styling
     $('<link/>', {
@@ -477,7 +477,7 @@ frappe.pages['targets'].on_page_load = function(wrapper) {
                 return '#000000';  // Black
         }
     }
-};
+};*/
 
 
 
@@ -654,6 +654,152 @@ frappe.pages['targets'].on_page_load = function(wrapper) {
 };*/
 
 
+frappe.pages['targets'].on_page_load = function(wrapper) {
+    $('<link/>', {
+        rel: 'stylesheet',
+        href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+        integrity: 'sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T',
+        crossorigin: 'anonymous'
+    }).appendTo('head');
+    
+
+    var page = frappe.ui.make_app_page({
+        parent: wrapper,
+        title: 'Target Sales Person Details',
+        single_column: true
+    });
+
+    // Create a field to select Sales Person from the Sales Person doctype
+    frappe.ui.form.make_control({
+        parent: page.body,
+        df: {
+            fieldtype: 'Link',
+            options: 'Sales Person',
+            label: 'Select Sales Person',
+            fieldname: 'sales_person',
+            
+            onchange: function() {
+                var sales_person = this.get_value();
+                if (sales_person) {
+                    // Fetch target details of the selected sales person using the custom server-side method
+                    frappe.call({
+                        method: 'ride_management.tasks.get_sales_data',
+                        args: {
+                            sales_person: sales_person
+                        },
+                        callback: function(r) {
+                            if (r.message && r.message.length > 0) {
+                                var total_target_amount = 0;
+                                var total_reached_amount = 0;
+                                
+                                // Loop through each row in the result and calculate totals
+                                r.message.forEach(function(row) {
+                                    total_target_amount += row.ci_amount || 0;
+                                    total_reached_amount += row.ci_supplier_amount || 0;
+                                });
+                
+                                var remaining_amount = total_target_amount - total_reached_amount;
+                                var percentage = (total_reached_amount / total_target_amount) * 100;
+                                var grade = calculate_grade(percentage);
+
+                                // Display the sales person details
+                                display_sales_person_details(sales_person, total_target_amount, total_reached_amount, remaining_amount, grade);
+                                
+                                // Render the report for the selected Sales Person
+                                render_report_model(sales_person);
+                            }
+                        }
+                    });
+                }
+            }
+        },
+        render_input: true
+    }).refresh();
+
+    // Function to display the sales person details in boxes
+    function display_sales_person_details(name, target, reached, remaining, grade) {
+        $(page.body).find('.sales-person-details').remove();
+
+        var gradeColor = get_grade_color(grade);
+        var details_container = $(`
+            <div class="sales-person-details" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <div class="box card text-center" style="width: 20%; padding: 10px;">
+                    <h5>Target Amount</h5>
+                    <p>${target}</p>
+                </div>
+                <div class="box card text-center" style="width: 20%; padding: 10px;">
+                    <h5>Achieved Target</h5>
+                    <p>${reached}</p>
+                </div>
+                <div class="box card text-center" style="width: 20%; padding: 10px;">
+                    <h5>Remaining Target</h5>
+                    <p>${remaining}</p>
+                </div>
+                <div class="box card text-center" style="width: 20%; padding: 10px; color: white; background-color: ${gradeColor};">
+                    <h5>Grade</h5>
+                    <p>${grade}</p>
+                </div>
+            </div>
+        `);
+
+        $(page.body).append(details_container);
+    }
+
+    // Grade calculation and color functions
+    function calculate_grade(percentage) {
+        if (percentage >= 90) return 'A+';
+        if (percentage >= 80) return 'A';
+        if (percentage >= 70) return 'B+';
+        if (percentage >= 60) return 'B';
+        if (percentage >= 50) return 'C+';
+        return 'C';
+    }
+
+    function get_grade_color(grade) {
+        switch (grade) {
+            case 'A+': return '#B8860B';
+            case 'A': return '#ffc107';
+            case 'B+': return '#007bff';
+            case 'B': return '#fd7e14';
+            case 'C+': return '#6c757d';
+            case 'C': return '#dc3545';
+            default: return '#000000';
+        }
+    }
+
+    // Function to render the report for the selected Sales Person on the same page
+    function render_report_model(sales_person) {
+        // Remove previous report container if it exists
+        $(page.body).find('.report-container').remove();
+
+        // Create a new container for the report
+        var report_container = $('<div class="report-container" style="margin-top: 30px;"></div>');
+        $(page.body).append(report_container);
+
+        // Create iframe element for the report
+        var report_iframe = $(`<iframe id="report-iframe" 
+        src="/app/query-report/Customer%20Order%20Form%20Report?sales_person=${encodeURIComponent(sales_person)}&minimal=1"
+        style="width: 100%; height: 800px; border: none;"></iframe>`);
+
+        // Append the iframe to the report container
+        report_container.append(report_iframe);
+
+        // Wait for iframe to load to inject custom CSS to hide the navbar
+        report_iframe.on('load', function() {
+            var iframeContent = document.getElementById('report-iframe').contentWindow.document;
+
+            // Inject CSS to hide the navbar inside the iframe
+            var style = document.createElement('style');
+            style.innerHTML = `
+                .navbar { display: none !important; }
+                .page-head { display: none !important; }
+            `;
+            
+            iframeContent.head.appendChild(style);
+        });
+    }
+
+};
 
 
 
